@@ -1,0 +1,13 @@
+
+
+.current-hour {
+    background-color: cornflowerblue;
+}
+
+.past-hour {
+    background-color: grey;
+}
+
+.future-hour {
+    background-color: rgb(181, 206, 252);
+}

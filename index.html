@@ -8,80 +8,74 @@
         <title>Simple Day Planner</title>
     </head>
 <body>
-<header>
- <h1>Simple Day Planner</h1>
- <h5>A simple way to organize your time.</h5>
- <h6>Today is (date)</h6>
+<header class="jumbotron jumbotron-fluid">
+ <div class="container">
+ <h1 class="display-4">Simple Day Planner</h1>
+ <h6 class="lead">A simple way to organize your time.</h6>
+ <p class="lead" id="current-day"></p>
+</div>
 </header>
-<div class="container">
-    <div class="row">
-        <div class="col-1">8:00 am</div>
-        <div class="col-md-6 col-lg-8"></div>
-        <div class="col-1"></div>
+<div class="container" id="main-container">
+    <div class="row border border-secondary time-block" id="9">
+        <div class="col-1 border-end border-secondary time-value">9:00 am</div>
+        <textarea class="col-9" id="9am"></textarea>
+        <button class="col-1 border-start border-secondary save-button"></button>
+        <button class="col-1 border-start border-secondary delete-button"></button>
     </div>
-    <div class="row">
-        <div class="col-2">9:00 am</div>
-        <div class="col-md-6 col-lg-8"></div>
-        <div class="col-2"></div>
+    <div class="row border border-secondary time-block" id="10">
+        <div class="col-1 border-end border-secondary time-value">10:00 am</div>
+        <textarea class="col-9" id="10am"></textarea>
+        <button class="col-1 border-start border-secondary save-button"></button>
+        <button class="col-1 border-start border-secondary delete-button"></button>
     </div>
-    <div class="row">
-        <div class="col-1">10:00 am</div>
-        <div class="col-md-6 col-lg-8"></div>
-        <div class="col-1"></div>
+    <div class="row border border-secondary time-block" id="11">
+        <div class="col-1 border-end border-secondary" >11:00 am</div>
+        <textarea class="col-9" id="11am"></textarea>
+        <button class="col-1 border-start border-secondary save-button"></button>
+        <button class="col-1 border-start border-secondary delete-button"></button>
     </div>
-    <div class="row">
-        <div class="col-1">11:00 am</div>
-        <div class="col-md-6 col-lg-8"></div>
-        <div class="col-1"></div>
+    <div class="row border border-secondary time-block" id="12">
+        <div class="col-1 border-end border-secondary time-value">12:00 pm</div>
+        <textarea class="col-9" id="12pm"></textarea>
+        <button class="col-1 border-start border-secondary save-button"></button>
+        <button class="col-1 border-start border-secondary delete-button"></button>
     </div>
-    <div class="row">
-        <div class="col-1">12:00 pm</div>
-        <div class="col-md-6 col-lg-8"></div>
-        <div class="col-1"></div>
+    <div class="row border border-secondary time-block" id="13">
+        <div class="col-1 border-end border-secondary time-value">1:00 pm</div>
+        <textarea class="col-9" id="1pm"></textarea>
+        <button class="col-1 border-start border-secondary save-button"></button>
+        <button class="col-1 border-start border-secondary delete-button"></button>
     </div>
-    <div class="row">
-        <div class="col-1">1:00 pm</div>
-        <div class="col-md-6 col-lg-8"></div>
-        <div class="col-1"></div>
+    <div class="row border border-secondary time-block" id="14">
+        <div class="col-1 border-end border-secondary time-value">2:00 pm</div>
+        <textarea class="col-9" id="2pm"></textarea>
+        <button class="col-1 border-start border-secondary save-button"></button>
+        <button class="col-1 border-start border-secondary delete-button"></button>
     </div>
-    <div class="row">
-        <div class="col-1">2:00 pm</div>
-        <div class="col-md-6 col-lg-8"></div>
-        <div class="col-1"></div>
+    <div class="row border border-secondary time-block" id="15">
+        <div class="col-1 border-end border-secondary time-value">3:00 pm</div>
+        <textarea class="col-9" id="3pm"></textarea>
+        <button class="col-1 border-start border-secondary save-button"></button>
+        <button class="col-1 border-start border-secondary delete-button"></button>
     </div>
-    <div class="row">
-        <div class="col-1">3:00 pm</div>
-        <div class="col-md-6 col-lg-8"></div>
-        <div class="col-1"></div>
+    <div class="row border border-secondary time-block" id="16">
+        <div class="col-1 border-end border-secondary time-value" >4:00 pm</div>
+        <textarea class="col-9" id="4pm"></textarea>
+        <button class="col-1 border-start border-secondary save-button"></button>
+        <button class="col-1 border-start border-secondary delete-button"></button>
     </div>
-    <div class="row">
-        <div class="col-1">4:00 pm</div>
-        <div class="col-md-6 col-lg-8"></div>
-        <div class="col-1"></div>
-    </div>
-    <div class="row">
-        <div class="col-1">5:00 pm</div>
-        <div class="col-md-6 col-lg-8"></div>
-        <div class="col-1"></div>
-    </div>
-    <div class="row">
-        <div class="col-1">6:00 pm</div>
-        <div class="col-md-6 col-lg-8"></div>
-        <div class="col-1"></div>
-    </div>
-    <div class="row">
-        <div class="col-1">7:00 pm</div>
-        <div class="col-md-6 col-lg-8"></div>
-        <div class="col-1"></div>
-    </div>
-    <div class="row">
-        <div class="col-1">8:00 pm</div>
-        <div class="col-md-6 col-lg-8"></div>
-        <div class="col-1"></div>
+    <div class="row border border-secondary time-block" id="17">
+        <div class="col-1 border-end border-secondary time-value">5:00 pm</div>
+        <textarea class="col-9" id="5pm"></textarea>
+        <button class="col-1 border-start border-secondary save-button"></button>
+        <button class="col-1 border-start border-secondary delete-button"></button>
     </div>
 </div>
 
-<script src="moment.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 <script src="logic.js"></script>
+
 </body>
 </html>
