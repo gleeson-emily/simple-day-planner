@@ -1,3 +1,12 @@
+body {
+    background-color: rgb(232, 243, 253);
+}
+
+.jumbotron {
+    background-image: url(project-2-placeholder.png);
+    background-size: cover;
+    color:rgb(99, 97, 97);
+}
 
 .save-button {
     background-color: rgb(18, 209, 18);
@@ -12,9 +21,15 @@
 }
 
 .past-hour {
-    background-color: grey;
+    background-color: rgb(179, 177, 177);
 }
 
 .future-hour {
     background-color: rgb(181, 206, 252);
+}
+.bi-save2-fill, .bi-x-square {
+    color: white;
+}
+.time-value {
+    color: rgb(99, 97, 97);
 }

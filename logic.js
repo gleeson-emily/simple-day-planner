@@ -1,15 +1,7 @@
 var saveButton = $(".save-button");
 var deleteButton = $(".delete-button");
-// var nineAM = $("#9am");
-// var tenAM = $("10am");
-// var elevenAM = $("11am");
-// var noon = $("12pm");
-// var onePM = $("1pm");
-// var twoPM = $("2pm");
-// var threePM = $("3pm");
-// var fourPM = $("4pm");
-// var fivePM = $("5pm");
 var savedTasks = [];
+
 $(document).ready(function () {
     var date = moment().format('dddd MMMM Do, YYYY');
   
@@ -19,11 +11,8 @@ $(document).ready(function () {
 function currentHour() {
     var currentTime = moment().hour();
     var hour = $(".time-block");
-
-
-hour.each(function() {
+    hour.each(function() {
     var thisHour = parseInt($(this).attr("id"))
-   // console.log(this)
     if (thisHour === currentTime) {
         $(this).children(".col-9").attr("class", "col-9").addClass("current-hour");
     } 
@@ -33,12 +22,8 @@ hour.each(function() {
     else {
         $(this).children(".col-9").attr("class", "col-9").addClass("past-hour");
     }
-// console.log(thisHour);
- //console.log(hour);
- //   console.log(currentTime);
-    });
+});
 }
-
 
 $(saveButton).on("click", function (event) {
     event.preventDefault();
@@ -47,7 +32,8 @@ $(saveButton).on("click", function (event) {
     var timeObject = {
         hours: time, 
         task: savedItems};
-   
+   console.log(savedItems);
+   console.log(time);
     savedTasks.push(timeObject);
 
     localStorage.setItem("saved-tasks", JSON.stringify(savedTasks))
@@ -75,26 +61,20 @@ $(deleteButton).on("click", function (event) {
 
 $(window).on ("load", function() {
     console.log(JSON.parse(localStorage.getItem("saved-tasks")));
-    savedTasks = JSON.parse(localStorage.getItem("saved-tasks"));
-    // console.log(savedTasks);
-    // console.log(savedTasks[0].task);
-    // console.log(savedTasks[0].hours);
-    // console.log(savedTasks[1].hours);
-    for (i = 0; i < savedTasks.length; i++) {
-    var tasksField = $(".col-9");
-    var dayHours = $(".time-value");
-        // console.log(tasksField)
-        // console.log(savedTasks[0].hours);
-        // console.log(dayHours);
-        // console.log(dayHours[0].outerText)
-    if (dayHours[i].outerText === savedTasks[i].hours) {
-       $(tasksField).text(savedTasks[i].task);
-       savedTasks.pop(tasksField);
-    } else {
-        $(tasksField).text('');
+    var saving = JSON.parse(localStorage.getItem("saved-tasks"));
+    console.log(saving);
+        var tasksField = $(".col-9");
+         var dayHours = $(".time-value");
+    if (saving) {
+       for (i = 0; i < saving.length; i++) {
+           savedTasks.push(saving);
+         console.log(dayHours);
+        if (dayHours[i].innerHTML === saving[i].hours) {
+         $(tasksField[i]).text(saving[i].task);
+    }    else {
+        $(tasksField[i]).text('');
     }
-   ;}
-    });
-
-
+}
+    }
 currentHour();
+});
