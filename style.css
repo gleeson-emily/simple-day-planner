@@ -1,4 +1,11 @@
 
+.save-button {
+    background-color: rgb(18, 209, 18);
+}
+
+.delete-button {
+    background-color: red;
+}
 
 .current-hour {
     background-color: cornflowerblue;

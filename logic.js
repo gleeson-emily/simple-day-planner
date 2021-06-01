@@ -1,14 +1,14 @@
 var saveButton = $(".save-button");
 var deleteButton = $(".delete-button");
-var nineAM = $("#9am");
-var tenAM = $("10am");
-var elevenAM = $("11am");
-var noon = $("12pm");
-var onePM = $("1pm");
-var twoPM = $("2pm");
-var threePM = $("3pm");
-var fourPM = $("4pm");
-var fivePM = $("5pm");
+// var nineAM = $("#9am");
+// var tenAM = $("10am");
+// var elevenAM = $("11am");
+// var noon = $("12pm");
+// var onePM = $("1pm");
+// var twoPM = $("2pm");
+// var threePM = $("3pm");
+// var fourPM = $("4pm");
+// var fivePM = $("5pm");
 var savedTasks = [];
 $(document).ready(function () {
     var date = moment().format('dddd MMMM Do, YYYY');
@@ -61,22 +61,40 @@ $(saveButton).on("click", function (event) {
     retrievedData = JSON.parse(localStorage.getItem("saved-tasks"));
     savedItems.innerHTML = savedTasks[i].task;
     }
-
-   
 })
 
 $(deleteButton).on("click", function (event) {
     event.preventDefault();
     console.log(savedTasks);
     for (i = 0; i < savedTasks.length; i++) {
-    window.localStorage.removeItem(savedTasks[i].task);
+    localStorage.removeItem("saved-tasks");
     console.log(savedTasks[i].task)}
     $(this).siblings(".col-9").val("");
     console.log($(this).siblings());
 })
 
-//for (retrievedData.length) {
+$(window).on ("load", function() {
+    console.log(JSON.parse(localStorage.getItem("saved-tasks")));
+    savedTasks = JSON.parse(localStorage.getItem("saved-tasks"));
+    // console.log(savedTasks);
+    // console.log(savedTasks[0].task);
+    // console.log(savedTasks[0].hours);
+    // console.log(savedTasks[1].hours);
+    for (i = 0; i < savedTasks.length; i++) {
+    var tasksField = $(".col-9");
+    var dayHours = $(".time-value");
+        // console.log(tasksField)
+        // console.log(savedTasks[0].hours);
+        // console.log(dayHours);
+        // console.log(dayHours[0].outerText)
+    if (dayHours[i].outerText === savedTasks[i].hours) {
+       $(tasksField).text(savedTasks[i].task);
+       savedTasks.pop(tasksField);
+    } else {
+        $(tasksField).text('');
+    }
+   ;}
+    });
 
-//}
 
 currentHour();
